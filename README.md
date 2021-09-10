@@ -12,4 +12,5 @@ Teleoperated tank drive joystick control
 * Changed Command import to [CommandScheduler](https://docs.wpilib.org/en/stable/docs/software/commandbased/command-scheduler.html) class which is supported by newer versions of WPIlib
 * Removed (commented) any Arm or Wrist code as it was not necessary for a tank drive
     *  This removed the need to update dependencies in those classes
+* Deleted "playingwithfusion2020.json" vendordep as some of the included urls no longer existed
 * Fixed typo error in NerdyLib which was not commit with this repository
