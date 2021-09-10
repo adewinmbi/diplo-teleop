@@ -1,4 +1,4 @@
-package frc.robot;
+package com.team687.frc2018;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into

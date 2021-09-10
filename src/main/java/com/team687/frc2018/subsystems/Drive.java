@@ -1,18 +1,21 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
+package com.team687.frc2018.subsystems;
 
-package frc.robot.subsystems;
-
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.nerdherd.lib.drivetrain.experimental.Drivetrain;
-import com.nerdherd.lib.motor.motorcontrollers.NerdyTalon;
-import frc.robot.RobotMap;
+import com.nerdherd.lib.drivetrain.teleop.ArcadeDrive;
 import com.nerdherd.lib.misc.AutoChooser;
-import frc.robot.constants.DriveConstants;
+import com.nerdherd.lib.motor.motorcontrollers.NerdyTalon;
+import com.team687.frc2018.Robot;
+import com.team687.frc2018.RobotMap;
+import com.team687.frc2018.constants.DriveConstants;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+/**
+ *
+ */
 public class Drive extends Drivetrain {
 
-  public Drive() {
+	public Drive() {
 		super(new NerdyTalon(RobotMap.kLeftMasterTalonID), new NerdyTalon(RobotMap.kRightMasterTalonID),
 		 new NerdyTalon[] {new NerdyTalon(RobotMap.kLeftSlaveVictorID)},
 		 new NerdyTalon[] {new NerdyTalon(RobotMap.kRightSlaveVictorID)},
@@ -23,8 +26,10 @@ public class Drive extends Drivetrain {
 		 super.configTicksPerFoot(DriveConstants.kTicksPerFootLeft, DriveConstants.kTicksPerFootRight);
 		 super.configLeftPIDF(DriveConstants.kTestP, DriveConstants.kTestI, DriveConstants.kTestD, 0);
 		 super.configRightPIDF(DriveConstants.kTestP, DriveConstants.kTestI, DriveConstants.kTestD, 0);
-		 super.configFeedforwardLeft(DriveConstants.kTestV, DriveConstants.kTestS, DriveConstants.kTestA);
-		 super.configFeedforwardRight(DriveConstants.kTestV, DriveConstants.kTestS, DriveConstants.kTestA);
+		//  super.configStaticFeedforward(DriveConstants.kTestV, DriveConstants.kRightStatic);
+		super.configFeedforwardLeft(DriveConstants.kTestV, DriveConstants.kTestS, DriveConstants.kTestA);
+		super.configFeedforwardRight(DriveConstants.kTestV, DriveConstants.kTestS, DriveConstants.kTestA);
+		
+		 super.configDate("2019_2_8_");
 	}
-
 }
